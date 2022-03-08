@@ -7,7 +7,7 @@ import java.util.List;
 
 public class AutonomousPopulationRegulator implements IBot
 {
-    private static final String BOTNAME="Autonomous Population Regulator A.I.";
+    private static final String BOTNAME="Autonomous Population Regulator";
 
     @Override public IMove doMove(IGameState state)
     {

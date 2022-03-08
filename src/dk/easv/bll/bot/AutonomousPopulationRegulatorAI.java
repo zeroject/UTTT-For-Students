@@ -5,6 +5,8 @@ import dk.easv.bll.move.IMove;
 
 public class AutonomousPopulationRegulatorAI implements IBot
 {
+    private static final String BOTNAME="Autonomous Population Regulator A.I.";
+
     @Override public IMove doMove(IGameState state)
     {
         return null;
@@ -12,6 +14,6 @@ public class AutonomousPopulationRegulatorAI implements IBot
 
     @Override public String getBotName()
     {
-        return "Autonomous Population Regulator A.I.";
+        return BOTNAME;
     }
 }

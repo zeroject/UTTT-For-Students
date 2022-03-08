@@ -6,7 +6,7 @@ import dk.easv.bll.move.IMove;
 import java.util.List;
 
 public class DamnSonBot implements  IBot{
-    private static final String BOTNAME="Autonomous Population Regulator";
+    private static final String BOTNAME="IBreakTheGame";
 
     @Override public IMove doMove(IGameState state)
     {

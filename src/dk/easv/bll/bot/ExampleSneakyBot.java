@@ -27,6 +27,9 @@ public class ExampleSneakyBot implements IBot{
     public IMove doMove(IGameState state) {
         return calculateWinningMove(state, moveTimeMs);
     }
+
+    
+
     // Plays single games until it wins and returns the first move for that. If iterations reached with no clear win, just return random valid move
     private IMove calculateWinningMove(IGameState state, int maxTimeMs){
         long time = System.currentTimeMillis();
@@ -36,11 +39,12 @@ public class ExampleSneakyBot implements IBot{
             GameSimulator simulator = createSimulator(state);
             IGameState gs = simulator.getCurrentState();
             List<IMove> moves = gs.getField().getAvailableMoves();
-            IMove randomMovePlayer = moves.get(rand.nextInt(moves.size()));
-            IMove winnerMove = randomMovePlayer;
+            IMove opponetMovePlayer =
+                    // moves.get(rand.nextInt(moves.size()));
+            IMove winnerMove = opponetMovePlayer;
 
             while (simulator.getGameOver()==GameOverState.Active){ // Game not ended
-                simulator.updateGame(randomMovePlayer);
+                simulator.updateGame(opponetMovePlayer);
 
                 // Opponent plays randomly
                 if (simulator.getGameOver()==GameOverState.Active){ // game still going
@@ -50,7 +54,7 @@ public class ExampleSneakyBot implements IBot{
                 }
                 if (simulator.getGameOver()==GameOverState.Active){ // game still going
                     moves = gs.getField().getAvailableMoves();
-                    randomMovePlayer = moves.get(rand.nextInt(moves.size()));
+                    opponetMovePlayer = moves.get(rand.nextInt(moves.size()));
                 }
             }
 

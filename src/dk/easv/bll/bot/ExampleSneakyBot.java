@@ -39,8 +39,7 @@ public class ExampleSneakyBot implements IBot{
             GameSimulator simulator = createSimulator(state);
             IGameState gs = simulator.getCurrentState();
             List<IMove> moves = gs.getField().getAvailableMoves();
-            IMove opponetMovePlayer =
-                    // moves.get(rand.nextInt(moves.size()));
+            IMove opponetMovePlayer = moves.get(rand.nextInt(moves.size()));
             IMove winnerMove = opponetMovePlayer;
 
             while (simulator.getGameOver()==GameOverState.Active){ // Game not ended
